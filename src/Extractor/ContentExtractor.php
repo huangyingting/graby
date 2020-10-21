@@ -610,7 +610,10 @@ class ContentExtractor
                 $src = null;
                 foreach ($this->config['src_lazy_load_attributes'] as $attribute) {
                     if ($e->hasAttribute($attribute)) {
-                        $src = $e->getAttribute($attribute);
+                        if( $attribute !== 'data-srcset' || $attribute !== 'data-sources')
+                        {
+                            $src = $e->getAttribute($attribute);
+                        }
                         $e->removeAttribute($attribute);
                     }
                 }

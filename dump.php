@@ -120,17 +120,17 @@ $graby = new Graby(array(
             'pre_filters' => array(),
             'post_filters' => array(),
         ),
-        'src_lazy_load_attributes' => array(
+        /*'src_lazy_load_attributes' => array(
             'data-src',
             'data-lazy-src',
             'data-original',
             'data-sources',
             'data-hi-res-src',
-        ),
+        ),*/
     ),
 ), new GuzzleAdapter(new GuzzleClient()));
 
-$article = 'https://www.infoq.com/articles/microservices-grpc-ballerina-go/?topicPageSponsorship=66c2f48f-18de-4b2c-ad0d-edb479b6e191';
+$article = 'https://engineering.fb.com/security/delf/';
 $result = $graby->fetchContent($article);
 //var_export($result);
 var_dump($result);
