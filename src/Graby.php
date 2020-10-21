@@ -804,6 +804,8 @@ class Graby
         $url = str_replace(' ', '%20', $url);
 
         $absolute = $this->makeAbsoluteStr($base, $url);
+        // $this->logger->info('makeAbsoluteStr', ['url' => $url,'makeAbsoluteStr' => $absolute]);
+
         if (false !== $absolute) {
             $e->setAttribute($attr, $absolute);
         }

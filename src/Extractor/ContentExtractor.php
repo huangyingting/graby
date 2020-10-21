@@ -615,7 +615,8 @@ class ContentExtractor
                     }
                 }
 
-                if (null !== $src) {
+                // Don't overwrite src attribute if it is already there
+                if (null !== $src && null == $e->getAttribute('src')) {
                     $e->setAttribute('src', $src);
                 }
             }
