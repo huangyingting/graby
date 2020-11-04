@@ -57,6 +57,14 @@ class SiteConfig
     public $src_lazy_load_attr = null;
 
     /**
+     * Attribute used to replace image (like `src`).
+     *
+     * @var ?string
+     */
+    public $image_attr = null;
+
+
+    /**
      * Strip elements which contain these strings (0 or more) in the id or class attribute.
      *
      * @var array

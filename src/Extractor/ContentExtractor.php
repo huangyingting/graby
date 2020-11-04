@@ -611,7 +611,11 @@ class ContentExtractor
                 foreach ($this->config['src_lazy_load_attributes'] as $attribute) {
                     if ($e->hasAttribute($attribute)) {
                         // Add logic to deal with data-srcset and data-sources, we don't need them as they are not data-src can be used to load image
-                        if(($attribute !== 'data-srcset') && ($attribute !== 'data-sources'))
+                        if($this->siteConfig->image_attr && ($this->siteConfig->image_attr == $attribute))
+                        {
+                            $src = $e->getAttribute($attribute);
+                        }
+                        elseif(($attribute !== 'data-srcset') && ($attribute !== 'data-sources'))
                         {
                             $src = $e->getAttribute($attribute);
                         }
@@ -620,7 +624,8 @@ class ContentExtractor
                 }
 
                 // Don't overwrite src attribute if it is already there
-                if (null !== $src && null == $e->getAttribute('src')) {
+                //if (null !== $src && null == $e->getAttribute('src')) {
+                if (null !== $src ) {
                     $e->setAttribute('src', $src);
                 }
             }

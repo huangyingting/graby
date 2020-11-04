@@ -130,7 +130,7 @@ $graby = new Graby(array(
     ),
 ), new GuzzleAdapter(new GuzzleClient()));
 
-$article = 'https://engineering.fb.com/security/delf/';
+$article = 'https://zhuanlan.zhihu.com/p/147486260?utm_source=fr.gaulupeau.apps.inthepoche&utm_medium=social&utm_oi=41851113439232';
 $result = $graby->fetchContent($article);
 //var_export($result);
 var_dump($result);
